@@ -115,7 +115,7 @@ button {
   position: relative;
   min-height: 100vh;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
-  background-color: var(--primary-clr-400);
+  margin-bottom: -5vw;
 }
 
 .overlay {
@@ -170,6 +170,7 @@ button {
     border: 0;
     width: 30px;
     height: 30px;
+    margin-left: auto;
   }
 
   .menu-button__line {
@@ -206,14 +207,35 @@ button {
   display: none;
 }
 
-.header-social-links[data-active-menu] {
-  display: flex;
-  gap: 2.5rem;
+@media (min-width: 50em) {
+  .header-social-links {
+    display: flex;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 50em) {
+  .header-social-links[data-active-menu] {
+    display: flex;
+    gap: 1.5rem;
+  } 
 }
 
 @media (max-width:50em) {
   .header-social-links {
+    padding-top: 1.25rem;
+    padding-inline: 1.25rem;
+  }
+
+  .header-menu-wrapper[data-active-menu] {
     position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: var(--neutral-clr-900);
+    border: 2px solid var(--primary-clr-400);
+    border-radius: 1.5rem 0 1.5rem 1.5rem;
+    padding: 1.5rem .5rem;
   }
 }
 
