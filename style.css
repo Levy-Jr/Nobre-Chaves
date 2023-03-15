@@ -120,30 +120,32 @@ button {
 
 .overlay {
   position: absolute;
-  inset: 0;
+  inset: 0 0 .5rem 0;
   background-color: rgba(0, 0, 0, .8);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+
 }
 
-.overlay::before {
+.header::after {
   content: "";
   position: absolute;
-  bottom: 1rem;
+  background-image: url("images/Lock-repair-Pros-On-Call.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: .5rem;
+  top: 0;
+  left: 0;
+  right: 0;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
-}
-
-.overlay::after {
-  content: "";
-  bottom: 1rem;
+  z-index: -1;
 }
 
 .header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/Lock-repair-Pros-On-Call.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: -2;
+  background-color: var(--primary-clr-400);
+  z-index: -3;
 }
 
 .top-header {
