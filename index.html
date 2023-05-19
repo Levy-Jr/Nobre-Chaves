@@ -23,6 +23,13 @@
 
           <div class="top-header">
             <span class="logo">Nobre</span>
+            <nav class="header-nav">
+              <ul class="footer-nav__ul">
+                <li class="footer-nav__li"><a href="#sobre">Sobre</a></li>
+                <li class="footer-nav__li"><a href="#servicos">Serviços</a></li>
+                <li class="footer-nav__li"><a href="#galeria">Galeria</a></li>
+              </ul>
+            </nav>
           </div>
 
           <div class="content-header">
@@ -39,12 +46,12 @@
   </header>
 
   <main class="main">
-    <section class="about-section">
-      <h2 class="about__title">Sobre.</h2>
+    <section class="about-section" id="sobre">
+      <h2 class="about__title">Sobre</h2>
 
       <div class="about-section-content">
         <div class="about-image-wrapper">
-          <img src="images/about-section-image.png" alt="">
+          <img src="images/about-image.png" alt="">
         </div>
 
         <div class="about-text-content">
@@ -59,64 +66,128 @@
       </div>
     </section>
 
-    <section class="services-section">
-      <h2 class="services__title">O que eu posso fazer por você?</h2>
+    <section class="services-section" id="servicos">
+      <h2 class="services__title">Serviços</h2>
 
-      <div class="services-wrapper">
+        <div class="tab-buttons" data-tab-buttons-parent role="tablist">
+          <button class="tab-key__button | active" role="tab" data-tab-button>Chaves</button>
 
-        <article class="service">
-          <img class="service__icon" src="images/key-service.png" alt="key icon">
-          <h3 class="service__title">Precisa de uma cópia?</h3>
-          <p class="service__p">Se você só tem uma chave para sua casa, carro, escritório ou armário, é importante ter uma cópia para evitar a perda da chave original.</p>
-        </article>
+          <button class="tab-lock__button" role="tab" data-tab-button>Fechaduras</button>
 
-        <article class="service">
-          <img class="service__icon" src="images/lock-service.png" alt="lock icon">
-          <h3 class="service__title">Problemas com a fechadura?</h3>
-          <p class="service__p">Agora se o problema for a fechadura, o caso é mais sério. Não pense duas vezes e entre em contato comigo.</p>
-        </article>
+          <button class="tab-stamp__button" role="tab" data-tab-button>Carimbos</button>
+        </div>
 
-        <article class="service">
-          <img class="service__icon" src="images/stamp-service.png" alt="stamp icon">
-          <h3 class="service__title">Um carimbo para sua empresa?</h3>
-          <p class="service__p">Um carimbo pode ser uma ferramenta útil para identificação, autenticação, eficiência e conformidade em uma variedade de situações.</p>
-        </article>
+        <div class="services-wrapper" data-tab-panel-wrapper>
+
+          <div class="service active">
+            <div class="service__icon-wrapper">
+              <img class="service__icon" src="images/Serviços-chaves.png" alt="key icon">
+            </div>
+            <div class="service-text-content">
+              <h3 class="service__title">Precisa de uma cópia?</h3>
+              <p class="service__p">Você já parou para pensar na importância de ter uma cópia da sua chave? Afinal, imprevistos acontecem, e ficar trancado fora de casa pode ser extremamente estressante e inconveniente. Ter uma cópia da chave pode salvar o seu dia em momentos como esse, permitindo que você recupere o acesso rapidamente e com tranquilidade.</p>
+              <button class="services__button">Entre em contato comigo</button>
+            </div>
+          </div>
+
+          <div class="service">
+            <div class="service__icon-wrapper">
+              <img class="service__icon" src="images/Serviços-fechaduras.png" alt="lock icon">
+            </div>
+            <div class="service-text-content">
+              <h3 class="service__title">Problemas com a fechadura?</h3>
+              <p class="service__p">A segurança do lar é prioridade e fechaduras funcionando corretamente são essenciais. Não adie o conserto da fechadura danificada. Vamos destacar as razões para consertá-la imediatamente, garantindo tranquilidade e proteção para sua família.</p>
+              <button class="services__button">Entre em contato comigo</button>
+            </div>
+          </div>
+
+          <div class="service">
+            <div class="service__icon-wrapper">
+              <img class="service__icon" src="images/Serviços-carimbo.png" alt="stamp icon">
+            </div>
+            <div class="service-text-content">
+              <h3 class="service__title">Um carimbo para sua empresa?</h3>
+              <p class="service__p">Um carimbo pode ser uma ferramenta útil para identificação, autenticação, eficiência e conformidade em uma variedade de situações.
+              </p>
+              <button class="services__button">Entre em contato comigo</button>
+            </div>
+        </div>
+
       </div>
 
-      <button class="services__button">Entre em contato comigo</button>
     </section>
+
+    <section class="gallery-section" id="galeria">
+      <h2 class="gallery-title">Galeria</h2>
+      <div class="gallery-content-wrapper">
+
+        <div class="gallery-content-video">
+          <div class="gallery-video-carousel" data-carousel>
+            <div data-slides>
+
+              <div class="slide" data-slide data-1 data-active>
+                <video class="largest-video" controls muted src="videos/WhatsApp Video 2023-05-18 at 10.04.45.mp4"></video>
+              </div>
+
+              <div class="slide" data-slide data-2>
+                <video class="largest-video" controls muted src="videos/WhatsApp Video 2023-05-18 at 10.04.58.mp4"></video>
+              </div>
+
+              <div class="slide" data-slide data-3>
+                <video class="largest-video" controls muted src="videos/WhatsApp Video 2023-05-18 at 10.05.31.mp4"></video>
+              </div>
+
+            </div>
+
+            <div class="slide-buttons" data-carousel-videos-buttons>
+              <button class="prevButton" data-carousel-video-button="prev">
+                <img src="images/arrow-left.png" alt="">
+              </button>
+
+              <button class="nextButton" data-carousel-video-button="next">
+                <img src="images/arrow-right.png" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
     <div class="container">
 
       <div class="footer-wrapper">
-        
-        <div class="footer-contact">
-          <h2 class="footer-content__title">Contato</h2>
-          <div class="contact-list-wrapper">
-            <div><img src="images/contact-phone.png" alt=""></div>
-            <ul class="footer-content__ul">
-              <li class="footer-content__li">+55 (92) 99267-6043</li>
-              <li class="footer-content__li">+55 (92) 99246-2332</li>
-            </ul>
-          </div>
-        </div>
 
-        <div class="footer-social-medias">
+        <div class="footer-menu-side">
           <h2 class="footer-social-medias__title">Nobre Chaves</h2>
-          <ul class="footer-social-medias__ul">
-            <li class="social-link"><a href="https://www.facebook.com/laecio.lima.549" target="_blank"><img src="images/facebook-icon.png" alt="">Laercio Lima</a></li>
-            <li class="social-link"><a href="https://www.instagram.com/nobre_chaves/" target="_blank"><img src="images/instagram-icon.png" alt="">nobre_chaves</a></li>
+          <ul class="footer-nav__ul">
+            <li class="footer-nav__li"><a href="#sobre">Sobre</a></li>
+            <li class="footer-nav__li"><a href="#servicos">Serviços</a></li>
+            <li class="footer-nav__li"><a href="#galeria">Galeria</a></li>
           </ul>
         </div>
 
         <div class="footer-logo-wrapper">
           <img src="images/logo.png" alt="logo">
         </div>
+
+        <div class="social-media-side">
+          <ul class="footer-social-medias__ul">
+            <li class="social-link"><a href="https://www.facebook.com/laecio.lima.549" target="_blank"><img src="images/facebook-icon.png" alt=""></a></li>
+            <li class="social-link"><a href="https://www.instagram.com/nobre_chaves/" target="_blank"><img src="images/instagram-icon.png" alt=""></a></li>
+            <li class="social-link"><a href="" target="_blank"><img src="images/white-wpp.png" alt=""></a></li>
+          </ul>
+          <p class="copyright">2023 Nobre Chaves. Todos os direitos reservados.</p>
+        </div>
       </div>
-      <p class="footer__p">Desenvolvido por <a href="https://levy-jr.github.io/Portfolio/" target="_blank" class="footer__levy">Levy Gomes</a></p>
     </div>
+    <p class="footer__p">Desenvolvido por <a href="https://levy-jr.github.io/Portfolio/" target="_blank" class="footer__levy">Levy Gomes</a></p>
   </footer>
 
 </body>
