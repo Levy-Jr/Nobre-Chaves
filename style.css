@@ -50,9 +50,9 @@ select {
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
+/*   html:focus-within {
    scroll-behavior: auto;
-  }
+  } */
   
   *,
   *::before,
@@ -87,6 +87,7 @@ body {
   font-family: var(--ff);
   color: var(--neutral-clr-100);
   text-align: center;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
@@ -117,7 +118,6 @@ body::-webkit-scrollbar-track {
 
 button {
   font-size: var(--fs-500);
-  cursor: pointer;
 }
 
 /* header */
@@ -363,27 +363,37 @@ button {
 
 .content-header__button {
   background: none;
-  border: 3px solid var(--neutral-clr-100);
-  border-radius: 13px;
-  color: var(--neutral-clr-100);
-  padding: .5rem 1.5rem;
+  border: 0;
 }
 
-.content-header__button.contact {
-  background-color: var(--primary-clr-400);
+.content-header__button a {
+  border: 3px solid var(--neutral-clr-100);
+  border-radius: 13px;
+  padding: .5rem 1.5rem;
+  display: block;
+  color: var(--neutral-clr-100);
+  text-decoration: none;
+}
+
+.content-header__button.contact a {
+  display: block;
   color: var(--neutral-clr-900);
+  background-color: var(--primary-clr-400);
   border-color: transparent;
 }
 
-.content-header__button.contact:hover {
+.content-header__button.contact a:hover {
   background-color: var(--primary-clr-400);
   box-shadow: 0 0 1rem var(--primary-clr-400);
 }
 
-.content-header__button:hover {
+.content-header__button a:hover {
   background-color: var(--neutral-clr-100);
-  color: var(--neutral-clr-900);
   box-shadow: 0 0 1rem var(--neutral-clr-100);
+}
+
+.content-header__button:hover a {
+  color: var(--neutral-clr-900);
 }
 
 /* main */
@@ -529,6 +539,7 @@ button {
 }
 
 .tab-buttons button {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -557,8 +568,6 @@ button {
   background-color: var(--primary-clr-400);
   height: 4px;
 }
-
-
 
 .tab-buttons button.active::after {
   transform: translateX(50%) scaleX(100%);
@@ -637,36 +646,43 @@ button {
 }
 
 .services__button {
+  background: none;
+  border: 0;
+}
+
+.services__button a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   background-color: var(--primary-clr-400);
   border: 2px solid var(--primary-clr-400);
-  padding: 1rem 0;
   border-radius: 13px;
   width: fit-content;
   margin-inline: auto;
+  padding: 1rem 0;
+  color: var(--neutral-clr-900);
+  text-decoration: none;
 }
 
 @media (min-width: 23.438em) {
-  .services__button {
+  .services__button a{
     padding: 1rem;
   }
 }
 
 @media (min-width: 56.25em) {
-  .services__button {
+  .services__button a{
     padding: 1rem;
     margin-inline: 0;
   }
 }
 
-.services__button:hover {
+.services__button a:hover {
   color: var(--neutral-clr-900);
   box-shadow: 0 0 .75rem var(--primary-clr-400);
 }
 
-.services__button::before {
+.services__button a::before {
   content: "";
   display: inline-block;
   background-image: url("images/whatsapp-icon.png");
@@ -677,7 +693,7 @@ button {
 }
 
 @media (min-width: 23.438em) {
-  .services__button::before {
+  .services__button a::before {
     margin-right: .75rem;
   }
 }
@@ -736,6 +752,7 @@ button {
 }
 
 .slide-buttons button {
+  cursor: pointer;
   background: none;
   border: 3px solid #2C2C2C;
   padding: 1rem;
@@ -762,6 +779,7 @@ button {
   --items-per-screen: 1;
   --item-size: -100%;
   --slider-index: 0;
+  --slider-position: -1;
   display: flex;
   transform: translateX(calc(var(--slider-index) * var(--item-size)));
   transition: transform 300ms ease-in-out;
@@ -776,6 +794,7 @@ button {
 
 @media (min-width: 56.25em){
   .gallery-slider {
+    --slider-position: 0;
     --items-per-screen: 3;
     --item-size: -33%;
   }
@@ -816,9 +835,10 @@ button {
 }
 
 button.gallery-prevButton, button.gallery-nextButton {
-  z-index: 2;
+  cursor: pointer;
   position: absolute;
   display: block;
+  z-index: 2;
   background-color: var(--neutral-clr-900);
   border: 3px solid #2C2C2C;
   bottom: 1rem;
@@ -827,7 +847,14 @@ button.gallery-prevButton, button.gallery-nextButton {
 }
 
 button.gallery-prevButton {
+  display: none;
   left: 26%;
+}
+
+@media (min-width: 37.5em) {
+  .button.gallery-prevButton {
+    display: block;
+  }
 }
 
 button.gallery-nextButton {

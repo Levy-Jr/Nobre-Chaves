@@ -5,6 +5,14 @@ btnHambuger.addEventListener('click', () => {
     menuActive.forEach(menu => menu.toggleAttribute('data-active-menu'))
 })
 
+const navLinks = document.querySelectorAll(".header-navigation__li")
+
+navLinks.forEach(li => {
+    li.addEventListener("click", () =>{
+        menuActive.forEach(menu => menu.removeAttribute("data-active-menu"))
+    }
+)})
+
 /* tab panel */
 
 const changeActiveElements = (elements) => {
@@ -67,13 +75,53 @@ const gallerySlider = document.querySelector('.gallery-slider')
 const prevButton = document.querySelector('.gallery-prevButton')
 const nextButton = document.querySelector('.gallery-nextButton')
 
-prevButton.addEventListener('click', () => {
+const handleButtons = () => {
+    let sliderPosition = parseInt(getComputedStyle(gallerySlider).getPropertyValue("--slider-position"))
+
+    if(sliderPosition <= -1) {
+        prevButton.style.display = "none"
+    } else {
+        prevButton.style.display = "block"
+    }
+
+    if(sliderPosition >= gallerySlider.children.length - 2) {
+        nextButton.style.display = "none"
+    } else {
+        nextButton.style.display = "block"
+    }
+}
+
+handleButtons()
+
+prevButton.addEventListener('click', () => {/* 
+    const itemCount = gallerySlider.children.length
+    const itemsPerScreen = parseInt(getComputedStyle(gallerySlider).getPropertyValue("--items-per-screen"))
+    const responsiveCount = Math.ceil(itemCount / itemsPerScreen) */
+
     let sliderIndex = parseInt(getComputedStyle(gallerySlider).getPropertyValue("--slider-index"))
+    let sliderPosition = parseInt(getComputedStyle(gallerySlider).getPropertyValue("--slider-position"))
+
     
-    gallerySlider.style.setProperty("--slider-index", sliderIndex - 1)
+    if(sliderPosition >= 0){
+        gallerySlider.style.setProperty("--slider-position", sliderPosition - 1)
+        gallerySlider.style.setProperty("--slider-index", sliderIndex - 1)
+    } 
+    
+    handleButtons()
 })
 
+
 nextButton.addEventListener('click', () => {
+/*     const itemCount = gallerySlider.children.length
+    const itemsPerScreen = parseInt(getComputedStyle(gallerySlider).getPropertyValue("--items-per-screen"))
+    const responsiveCount = Math.ceil(itemCount / itemsPerScreen) */
+
     let sliderIndex = parseInt(getComputedStyle(gallerySlider).getPropertyValue("--slider-index"))
-    gallerySlider.style.setProperty("--slider-index", sliderIndex + 1)
+    let sliderPosition = parseInt(getComputedStyle(gallerySlider).getPropertyValue("--slider-position"))
+
+    if(sliderPosition + 1 <= gallerySlider.children.length - 2){
+        gallerySlider.style.setProperty("--slider-position", sliderPosition + 1)
+        gallerySlider.style.setProperty("--slider-index", sliderIndex + 1)
+    }
+    handleButtons()
 })
