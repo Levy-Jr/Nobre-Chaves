@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-menu>
   <header class="header">
 
     <div class="overlay">
@@ -24,11 +24,24 @@
           <div class="top-header">
             <span class="logo">Nobre</span>
             <nav class="header-nav">
-              <ul class="footer-nav__ul">
-                <li class="footer-nav__li"><a href="#sobre">Sobre</a></li>
-                <li class="footer-nav__li"><a href="#servicos">Serviços</a></li>
-                <li class="footer-nav__li"><a href="#galeria">Galeria</a></li>
-              </ul>
+              <div class="header-navigation-wrapper" data-menu>
+                <button class="header-navigation__menu-button" data-menu-button data-menu>
+                  <span class="menu-button__line" data-menu></span>
+                  <span class="menu-button__line" data-menu></span>
+                  <span class="menu-button__line" data-menu></span>
+                </button>
+                <ul class="header-navigation__ul" data-menu>
+                  <li class="header-navigation__li"><a href="#sobre">Sobre</a></li>
+                  <li class="header-navigation__li"><a href="#servicos">Serviços</a></li>
+                  <li class="header-navigation__li"><a href="#galeria">Galeria</a></li>
+                </ul>
+                <ul class="header-social__ul" data-menu>
+                  <li class="header-social__li"><a href="https://www.facebook.com/laecio.lima.549" target="_blank"><img src="images/facebook-icon.png" alt=""></a></li>
+
+                  <li class="header-social__li"><a href="https://www.instagram.com/nobre_chaves/" target="_blank"><img src="images/instagram-icon.png" alt=""></a></li>
+                  <li class="header-social__li"><a href="" target="_blank"><img src="images/white-wpp.png" alt=""></a></li>
+                </ul>
+              </div>
             </nav>
           </div>
 
@@ -36,7 +49,10 @@
             <h1 class="content-header__title"><span class="accent-clr">Chaves e</span> carimbos</h1>
             <img class="content__img-cadeado" src="images/header cadeado.png" alt="">
             <p class="content-header__p">Abrimos portas, cofres e fazemos abertura de todos os tipos de carros. Com anos de experiência no ramo de chaveiro, estou sempre pronto para ajudar a resolver seus problemas de segurança e acesso. Combinando habilidade, conhecimento e ferramentas.</p>
-            <button class="content-header__button">Ver mais</button>
+            <div class="content-header-button-group">
+              <button class="content-header__button contact">Contato</button>
+              <button class="content-header__button">Ver mais</button>
+            </div>
           </div>
 
       </div>
@@ -123,6 +139,7 @@
 
         <div class="gallery-content-video">
           <div class="gallery-video-carousel" data-carousel>
+
             <div data-slides>
 
               <div class="slide" data-slide data-1 data-active>
@@ -151,10 +168,62 @@
           </div>
         </div>
 
-        <div>
+        <div class="gallery-container">
+          <button class="gallery-prevButton" data-carousel-img-button="prev">
+            <img src="images/arrow-left.png" alt="">
+          </button>
+            <div class="gallery-slider" data-carousel>
+                  <div class="image">
+                    <img src="images/Galeria de fotos/chave-de-carro.jpg" alt="">
+                  </div>
 
-        </div>
+                  <div class="image">
+                    <img src="images/Galeria de fotos/consertando-fechadura-2.png" alt="">
+                  </div>
+
+                  <div class="image">
+                    <img src="images/Galeria de fotos/carimbos.jpg" alt="">
+                  </div>
+
+                  <div class="image">
+                    <img src="images/Galeria de fotos/consertando-fechadura.png" alt="">
+                  </div>
+
+                  <div class="image">
+                    <img src="images/Galeria de fotos/máquina-de-cópia-de-chaves.png" alt="">
+                  </div>
+
+                  <div class="image">
+                    <img src="images/Galeria de fotos/foto-parede-disk-chaveiro.png" alt="">
+                  </div>
+
+                  <div class="image">
+                    <img src="images/Galeria de fotos/foto-parede-informativo.png" alt="">
+                  </div>
+
+                  <div class="image">
+                    <img src="images/Galeria de fotos/chaves.png" alt="">
+                  </div>
+
+                  <div class="image">
+                    <img src="images/Galeria de fotos/chaves-2.png" alt="">
+                  </div>
+
+                  <div class="image">
+                    <img src="images/Galeria de fotos/carimbos-2.png" alt="">
+                  </div>
+
+                  <div class="image">
+                    <img src="images/Galeria de fotos/carimbos-e-chaves.png" alt="">
+                  </div>
+                </div>
+
+                <button class="gallery-nextButton" data-carousel-img-button="next">
+                  <img src="images/arrow-right.png" alt="">
+                </button>
       </div>
+    </div>
+      
     </section>
 
   </main>

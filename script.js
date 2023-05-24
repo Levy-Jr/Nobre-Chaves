@@ -1,9 +1,9 @@
-/* const btnHambuger = document.querySelector('[data-menu-button]')
+const btnHambuger = document.querySelector('[data-menu-button]')
 const menuActive = document.querySelectorAll('[data-menu]')
 
 btnHambuger.addEventListener('click', () => {
     menuActive.forEach(menu => menu.toggleAttribute('data-active-menu'))
-}) */
+})
 
 /* tab panel */
 
@@ -55,4 +55,25 @@ carouselVideoButton.forEach(button => {
         slides.children[newIndex].dataset.active = true
         delete activeSlide.dataset.active
     })
+})
+
+const carouselImgButton = document.querySelectorAll('[data-carousel-img-button]')
+
+/* carousel */
+const sliderContainer = document.querySelector('.gallery-container')
+/* carousel */
+const gallerySlider = document.querySelector('.gallery-slider')
+
+const prevButton = document.querySelector('.gallery-prevButton')
+const nextButton = document.querySelector('.gallery-nextButton')
+
+prevButton.addEventListener('click', () => {
+    let sliderIndex = parseInt(getComputedStyle(gallerySlider).getPropertyValue("--slider-index"))
+    
+    gallerySlider.style.setProperty("--slider-index", sliderIndex - 1)
+})
+
+nextButton.addEventListener('click', () => {
+    let sliderIndex = parseInt(getComputedStyle(gallerySlider).getPropertyValue("--slider-index"))
+    gallerySlider.style.setProperty("--slider-index", sliderIndex + 1)
 })
